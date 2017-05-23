@@ -1,0 +1,13 @@
+.framer {
+  border: 1px solid red;
+  margin: auto;
+  width: 65%;
+}
+
+img {
+  width: 200px;
+}
+
+html {
+  position: relative;
+}
