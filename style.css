@@ -1,0 +1,23 @@
+/*.framer {
+  border: 1px solid red;
+  margin: auto;
+  width: 65%;
+}*/
+* {
+  width: 900px;
+  border: 1px solid #5d4b4b;
+  margin: 0px auto;
+}
+html {
+  position: relative;
+}
+
+img {
+  width: 200px;
+  height: 20px;
+}
+
+#new-chart {
+  display: block;
+  height: 300px;
+}
