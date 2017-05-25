@@ -1,10 +1,11 @@
 'use strict';
 
 var totalClicks = 0;
+
 // image constructor
 function PageImage(name, filepath){
   this.name = name;
-  this.filepath = 'img/' + filepath;
+  this.filepath = filepath;
   this.timesShown = 0;
   this.timesClicked = 0;
 }
@@ -14,7 +15,6 @@ var imagesOnPreviousScreen = [];
 var imagesOnScreen = [];
 
 var allImages = [
-
   new PageImage ('star wars backpack', 'bag.jpg', 'bag-id'),
   new PageImage ('banana slicer', 'banana.jpg', 'banana-id'),
   new PageImage ('bathroom tablet holder', 'bathroom.jpg', 'bathroom-id'),
