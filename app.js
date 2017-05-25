@@ -15,39 +15,44 @@ var imagesOnPreviousScreen = [];
 var imagesOnScreen = [];
 
 var allImages = [
+  // I'm going to break these up in fives for easier management
+  //five
   new PageImage ('star wars backpack', 'bag.jpg', 'bag-id'),
   new PageImage ('banana slicer', 'banana.jpg', 'banana-id'),
   new PageImage ('bathroom tablet holder', 'bathroom.jpg', 'bathroom-id'),
   new PageImage ('yellow boots', 'boots.jpg', 'boots-id'),
   new PageImage ('breakfast machine', 'breakfast.jpg', 'breakfast-id'),
+  //ten
   new PageImage ('meatball bubble gum', 'bubblegum.jpg', 'bubblegum-id'),
   new PageImage ('red chair', 'chair.jpg', 'chair-id'),
   new PageImage ('green monster', 'cthulhu.jpg', 'cthulhu-id'),
   new PageImage ('duck mouthed dog', 'dog-duck.jpg', 'dog-duck-id'),
   new PageImage ('canned dragon meat', 'dragon.jpg', 'dragon-id'),
+//fifteen
   new PageImage ('spoon pen', 'pen.jpg', 'pen-id'),
   new PageImage ('pet dusting boots', 'pet-sweep.jpg', 'pet-sweet-id'),
   new PageImage ('pizza scissors', 'scissors.jpg', 'scissors-id'),
   new PageImage ('shark sleeping bag', 'shark.jpg', 'shark-id'),
   new PageImage ('baby dusting onesie', 'sweep.png', 'sweep-id'),
+//twenty!!
   new PageImage ('tauntaun sleeping bag', 'tauntaun.jpg', 'tauntaun-id'),
   new PageImage ('canned unicorn meat', 'unicorn.jpg', 'unicorn-id'),
   new PageImage ('octopus tentacle usb', 'usb.gif', 'usb-id'),
   new PageImage ('water can artwork', 'water-can.jpg', 'water-can-id'),
   new PageImage ('wine glass artwork', 'wine-glass.jpg', 'wine-glass-id'),
 ];
-
+//this function speaks for itself
 function getRandomImage(list) {
   return Math.floor(Math.random() * list.length);
 }
-
+//as does this one
 function getThreeRandomImages() {
   allImages = allImages.concat(imagesOnSecondToLastScreen);
   imagesOnSecondToLastScreen = imagesOnPreviousScreen;
   imagesOnPreviousScreen = imagesOnScreen;
   imagesOnScreen = [];
 
-
+//now to track the images and splice from the array
   var nextImage = allImages.splice(getRandomImage(allImages),1);
   imagesOnScreen = imagesOnScreen.concat(nextImage);
   nextImage = allImages.splice(getRandomImage(allImages),1);
@@ -83,6 +88,7 @@ function handleEvent(event) {
     leftImage.removeEventListener('click', handleEvent);
     centerImage.removeEventListener('click', handleEvent);
     rightImage.removeEventListener('click', handleEvent);
+    // after 25 clicks create the chart function!
     createChart();
   }
 
@@ -94,6 +100,14 @@ function handleEvent(event) {
   imagesOnScreen[1].timesShown++;
   rightImage.src = imagesOnScreen[2].filepath;
 }
+
+getThreeRandomImages();
+
+leftImage.src = imagesOnScreen[0].filepath;
+imagesOnScreen[0].timesShown++;
+centerImage.src = imagesOnScreen[1].filepath;
+imagesOnScreen[1].timesShown++;
+rightImage.src = imagesOnScreen[2].filepath;
 
 function createChart(){
 
