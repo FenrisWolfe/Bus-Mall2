@@ -3,21 +3,20 @@
   margin: auto;
   width: 65%;
 }*/
-* {
+
+html {
   width: 900px;
   border: 1px solid #5d4b4b;
-  margin: 0px auto;
-}
-html {
+  margin: auto;
   position: relative;
 }
 
 img {
   width: 200px;
-  height: 20px;
+  height: 200px;
 }
 
 #new-chart {
   display: block;
-  height: 300px;
+  height: 420px;
 }

@@ -5,7 +5,7 @@ var totalClicks = 0;
 // image constructor
 function PageImage(name, filepath){
   this.name = name;
-  this.filepath = filepath;
+  this.filepath = 'img/' + filepath;
   this.timesShown = 0;
   this.timesClicked = 0;
 }
@@ -15,7 +15,7 @@ var imagesOnPreviousScreen = [];
 var imagesOnScreen = [];
 
 var allImages = [
-  // I'm going to break these up in fives for easier management
+  // I'm going to break these up in fives for easier instantiate management
   //five
   new PageImage ('star wars backpack', 'bag.jpg', 'bag-id'),
   new PageImage ('banana slicer', 'banana.jpg', 'banana-id'),
@@ -26,7 +26,7 @@ var allImages = [
   new PageImage ('meatball bubble gum', 'bubblegum.jpg', 'bubblegum-id'),
   new PageImage ('red chair', 'chair.jpg', 'chair-id'),
   new PageImage ('green monster', 'cthulhu.jpg', 'cthulhu-id'),
-  new PageImage ('duck mouthed dog', 'dog-duck.jpg', 'dog-duck-id'),
+  new PageImage ('duck dog', 'dog-duck.jpg', 'dog-duck-id'),
   new PageImage ('canned dragon meat', 'dragon.jpg', 'dragon-id'),
 //fifteen
   new PageImage ('spoon pen', 'pen.jpg', 'pen-id'),
@@ -41,6 +41,11 @@ var allImages = [
   new PageImage ('water can artwork', 'water-can.jpg', 'water-can-id'),
   new PageImage ('wine glass artwork', 'wine-glass.jpg', 'wine-glass-id'),
 ];
+
+
+
+
+
 //this function speaks for itself
 function getRandomImage(list) {
   return Math.floor(Math.random() * list.length);
@@ -203,7 +208,7 @@ function createChart(){
 
 
   new Chart(ctx, {
-    type: 'horizontalBar',
+    type: 'radar',
     data: data,
   });
 }

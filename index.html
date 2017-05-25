@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Bus Mall </title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
-  </head>
-  <body>
-    <div id="bus-mall-body">
-      <div id="images-selection">
-        <img class="product-photos" id="image1"/>
-        <img class="product-photos" id="image2"/>
-        <img class="product-photos" id="image3"/>
-      </div>
-      <div id="new-chart">
-        <canvas id="myChart" width="400" height="400"></canvas>
-      </div>
+<head>
+  <title> Bus Mall </title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+</head>
+<body>
+  <div id="bus-mall-body">
+    <div id="images-selection">
+      <img class="product_photos_1" id="image1"/>
+      <img class="product_photos2" id="image2"/>
+      <img class="product_photos3" id="image3"/>
     </div>
-    <script src="app.js"></script>
-  </body>
+    <div id="new-chart">
+      <canvas id="myChart" width="900" height="600"></canvas>
+    </div>
+  </div>
+  <button onclick="window.localStorage.clear();">Clear All</button>
+  <input type="button" value="Refresh Page" onclick="window.location.reload()">
+  <script src="app.js"></script>
+</body>
 </html>
